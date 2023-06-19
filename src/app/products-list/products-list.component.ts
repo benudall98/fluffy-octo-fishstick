@@ -17,7 +17,6 @@ import { ProductService } from '../product.service';
                <th>City</th>
                <th>State</th>
                <th>Labour</th>
-               <th>Wifi</th>
                <th>Description</th>
            </tr>
        </thead>
@@ -28,7 +27,6 @@ import { ProductService } from '../product.service';
                <td>{{product.city}}</td>
                <td>{{product.state}}</td>
                <td>{{product.labour}}</td>
-               <td>{{product.wifi}}</td>
                <td>{{product.description}}</td>
 
                <td>

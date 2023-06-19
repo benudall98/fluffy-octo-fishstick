@@ -1,9 +1,8 @@
 export interface Product {
-    id: number;
+    _id: string;
     name: string;
     city: string;
     state: string;
     labour: number;
-    wifi: boolean;
     description: string;
 }
