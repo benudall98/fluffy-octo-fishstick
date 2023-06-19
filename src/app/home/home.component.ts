@@ -10,7 +10,7 @@ import { Product } from '../product';
   standalone: true,
   imports: [CommonModule, ProductComponent],
   template: `
-  <h1 class="text-center m-5">Products</h1>  
+  <h1>Products</h1>  
   <section class="results">
     <app-product *ngFor = "let product of productList" [product]="product"></app-product>
   </section>
