@@ -19,7 +19,7 @@ export class ProductService {
      });
  }
  
- getProducts(): Subject<Product[]> {
+ getProducts(): Observable<Product[]> {
    this.refreshProducts();
    return this.products$;
  }
