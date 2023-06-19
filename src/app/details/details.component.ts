@@ -5,6 +5,7 @@ import { ProductService } from '../product.service';
 import { Product } from '../product';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { EnquiryService } from '../enquiry.service';
 
 
 @Component({
@@ -31,7 +32,7 @@ import { Observable } from 'rxjs';
       <section class="listing-apply">
         <h2 class="section-heading">Submit an enquiry</h2>
         <ng-container *ngIf="!enquirySent; else enquirySentTemplate">
-          <form [formGroup]="applyForm">
+          <form [formGroup]="applyForm" (ngSubmit)="submitEnquiry()">
             <label for="first-name">First Name</label>
             <input id="first-name" type="text" formControlName="firstName">
   
@@ -69,6 +70,7 @@ export class DetailsComponent implements OnInit {
 
   constructor(
     private productService: ProductService,
+    private enquiryService: EnquiryService,
     private route: ActivatedRoute
   ) {}
 
@@ -78,4 +80,27 @@ export class DetailsComponent implements OnInit {
       this.product = product;
     });
   }
+
+  submitEnquiry() {
+    if (this.applyForm.valid) {
+      const enquiryData = {
+        ...this.applyForm.value,
+        product: this.product?.name, // assuming the product name is unique
+      };
+      
+      this.enquiryService.submitEnquiry(enquiryData).subscribe(
+        (res) => {
+          if (res.message === 'Created a new product') {
+            this.enquirySent = true;
+            this.applyForm.reset();
+          }
+        },
+        (error) => {
+          console.error('Error occurred:', error);
+          // Handle error
+        }
+      );
+    }
+  }
+  
 }
