@@ -7,10 +7,6 @@ import { Product as Product } from '../product';
  selector: 'app-product-form',
  template: `
    <form class="product-form" autocomplete="off" [formGroup]="productForm" (ngSubmit)="submitForm()">
-    <div class="form-floating mb-3">
-      <input class="form-control" type="string" id="id" formControlName="id" placeholder="ID" required>
-      <label for="id">ID</label>
-    </div>
 
     <div class="form-floating mb-3">
       <input class="form-control" type="text" id="name" formControlName="name" placeholder="Name" required>
