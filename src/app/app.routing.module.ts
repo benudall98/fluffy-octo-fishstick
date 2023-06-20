@@ -9,9 +9,9 @@ const routes: Routes = [
   // { path: '', redirectTo: 'products', pathMatch: 'full' },
   { path: '', component: HomeComponent},
   { path: 'products', component: ProductsListComponent }, 
-  { path: 'products/new', component: AddProductComponent }, // 
+  { path: 'products/new', component: AddProductComponent }, 
   { path: 'products/edit/:id', component: EditProductComponent }, 
-  {path: 'details/:id', component: DetailsComponent}];
+  { path: 'details/:id', component: DetailsComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
