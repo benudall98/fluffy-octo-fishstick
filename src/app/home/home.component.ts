@@ -15,8 +15,7 @@ import { Product } from '../product';
     <app-product *ngFor = "let product of productList" [product]="product"></app-product>
   </section>
   `,
-  styles: [
-  ]
+  styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
   productList: Product[] = [];

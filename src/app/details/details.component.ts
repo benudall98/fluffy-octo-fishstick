@@ -20,6 +20,10 @@ import { EnquiryService } from '../enquiry.service';
       <section class="listing-description">
         <h2 class="listing-heading">{{product?.name}}</h2>
         <p class="listing-location">{{product?.city}}, {{product?.state}}</p>
+        <img class= "listing-photo" *ngIf="product?.name === 'Starlink Installation'" src="/assets/starlink.png" alt="Starlink Installation">
+        <img class= "listing-photo" *ngIf="product?.name === 'Wifi Installation'" src="/assets/ap.jpg" alt="Wifi Installation">
+        <img class= "listing-photo" *ngIf="product?.name === 'CCTV Installation'" src="/assets/nest.jpg" alt="CCTV Installation">
+        <img class= "listing-photo" *ngIf="product?.name === 'CCTV Doorbell Installation'" src="/assets/doorbell.jpg" alt="CCTV Doorbell Installation">
       </section>
       <section class="listing-features">
         <h2 class="section-heading">About this product</h2>
