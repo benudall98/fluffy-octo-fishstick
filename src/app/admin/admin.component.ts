@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 @Component({
  selector: 'admin',
  template: `
+ <h1>Admin</h1>
  <header>
    <nav class="navbar">
      <a *ngFor="let route of routes" [routerLink]="route.path" class="nav-link">{{ route.label }}</a>
