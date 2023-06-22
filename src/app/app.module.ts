@@ -5,14 +5,12 @@ import { AppRoutingModule } from './app.routing.module';
 import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
-//import { RouterModule } from '@angular/router';
 import { ProductFormComponent } from './product-form/product-form.component';
 import { ProductsListComponent } from './products-list/products-list.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AddProductComponent } from './add-product/add-product.component';
 import { EditProductComponent } from './edit-product/edit-product.component'; 
 import { AdminComponent } from './admin/admin.component';
-
 
 @NgModule({
   declarations: [
@@ -21,13 +19,12 @@ import { AdminComponent } from './admin/admin.component';
     ProductsListComponent,
     AddProductComponent,
     EditProductComponent, 
-    AdminComponent,
+    AdminComponent
   ],
   imports: [
     AppRoutingModule, 
     BrowserModule,
     HttpClientModule,
-    //RouterModule, 
     ReactiveFormsModule 
   ],
   providers: [],

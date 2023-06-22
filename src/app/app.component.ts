@@ -23,10 +23,4 @@ import { Component } from '@angular/core';
  
 })
 export class AppComponent { 
-
-  routes = [
-    { path: '/', label: 'Home' },
-    { path: '/products', label: 'Products' },
-    { path: '/products/new', label: 'Add Product' },
-    ];
 }

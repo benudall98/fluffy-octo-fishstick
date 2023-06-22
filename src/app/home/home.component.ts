@@ -1,29 +1,37 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductService } from '../product.service';
-import { ProductsListComponent } from '../products-list/products-list.component';
 import { ProductComponent } from '../product/product.component';
 import { Product } from '../product';
+import { AboutComponent } from '../about/about.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, ProductComponent],
+  imports: [CommonModule, ProductComponent, RouterModule],
   template: `
-  <h1>Products</h1>  
+  <header>
+   <nav class="navbar">
+     <a *ngFor="let route of routes" [routerLink]="route.path" class="nav-link">{{ route.label }}</a>
+   </nav>
+ </header>
   <section class="results">
     <app-product *ngFor = "let product of productList" [product]="product"></app-product>
   </section>
   `,
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit{
   productList: Product[] = [];
-  productService: ProductService = inject(ProductService);
+  routes = [  
+    { path: '/about', label: 'About Us' },
+  ];
 
-constructor() {
-  this.productService.getProducts().subscribe((products) => {
-    this.productList = products;
-  });
+constructor(private productService: ProductService) { }
+ 
+ngOnInit() {
+  this.productService.getProducts()
+    .subscribe(products => this.productList = products);
 }
-}
+};
