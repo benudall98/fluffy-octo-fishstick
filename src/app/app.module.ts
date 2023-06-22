@@ -11,6 +11,7 @@ import { ProductsListComponent } from './products-list/products-list.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AddProductComponent } from './add-product/add-product.component';
 import { EditProductComponent } from './edit-product/edit-product.component'; 
+import { AdminComponent } from './admin/admin.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { EditProductComponent } from './edit-product/edit-product.component';
     ProductFormComponent,
     ProductsListComponent,
     AddProductComponent,
-    EditProductComponent
+    EditProductComponent, 
+    AdminComponent,
   ],
   imports: [
     AppRoutingModule, 

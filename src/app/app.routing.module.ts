@@ -5,13 +5,17 @@ import { AddProductComponent } from './add-product/add-product.component';
 import { EditProductComponent } from './edit-product/edit-product.component'; 
 import { HomeComponent } from './home/home.component';
 import { DetailsComponent } from './details/details.component';
+import { AdminComponent } from './admin/admin.component';
+
 const routes: Routes = [
   // { path: '', redirectTo: 'products', pathMatch: 'full' },
   { path: '', component: HomeComponent},
   { path: 'products', component: ProductsListComponent }, 
   { path: 'products/new', component: AddProductComponent }, 
   { path: 'products/edit/:id', component: EditProductComponent }, 
-  { path: 'details/:id', component: DetailsComponent}];
+  { path: 'details/:id', component: DetailsComponent}, 
+  { path: 'admin', component: AdminComponent},
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
