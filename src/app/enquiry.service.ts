@@ -1,10 +1,8 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { injectable } from 'inversify';
 
-@Injectable({
-  providedIn: 'root'
-})
+@injectable()
 export class EnquiryService {
   private apiUrl = 'http://localhost:5200/enquiries'; // Update with your backend API endpoint
 

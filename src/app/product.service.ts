@@ -1,11 +1,9 @@
-import { Injectable } from '@angular/core';
+import { injectable } from 'inversify';
 import { HttpClient } from '@angular/common/http';
 import { Observable, Subject, tap } from 'rxjs';
 import { Product } from './product';
  
-@Injectable({
- providedIn: 'root'
-})
+@injectable()
 export class ProductService {
  private url = 'http://localhost:5200';
  private products$: Subject<Product[]> = new Subject();
