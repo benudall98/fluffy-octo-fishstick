@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
- 
+import { injectable } from 'inversify';
+
+@injectable()
 @Component({
  selector: 'app-root',
  template: `

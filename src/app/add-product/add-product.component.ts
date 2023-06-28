@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Product } from '../product';
 import { ProductService } from '../product.service';
+import { inject } from 'inversify';
  
 @Component({
  selector: 'app-add-product',
@@ -13,7 +14,7 @@ import { ProductService } from '../product.service';
 export class AddProductComponent {
  constructor(
    private router: Router,
-   private productService: ProductService
+   @inject(ProductService) private productService: ProductService
  ) { }
  
  addProduct(product: Product) {

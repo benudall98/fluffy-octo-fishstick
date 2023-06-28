@@ -6,6 +6,7 @@ import { Product } from '../product';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { EnquiryService } from '../enquiry.service';
+import { inject } from 'inversify';
 
 
 @Component({
@@ -73,8 +74,8 @@ export class DetailsComponent implements OnInit {
   product: Product | undefined;
 
   constructor(
-    private productService: ProductService,
-    private enquiryService: EnquiryService,
+    @inject(ProductService) private productService: ProductService,
+    @inject (EnquiryService) private enquiryService: EnquiryService,
     private route: ActivatedRoute
   ) {}
 

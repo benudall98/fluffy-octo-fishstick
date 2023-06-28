@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Product } from '../product';
 import { ProductService } from '../product.service';
+import { injectable } from 'inversify';
 
-
- 
+ @injectable()
 @Component({
  selector: 'app-products-list',
  template: `

@@ -1,10 +1,12 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductService } from '../product.service';
 import { ProductsListComponent } from '../products-list/products-list.component';
 import { ProductComponent } from '../product/product.component';
 import { Product } from '../product';
+import { injectable } from 'inversify';
 
+@injectable()
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -19,9 +21,10 @@ import { Product } from '../product';
 })
 export class HomeComponent {
   productList: Product[] = [];
-  productService: ProductService = inject(ProductService);
+  productService: ProductService;
 
-constructor() {
+constructor(productService: ProductService) {
+  this.productService = productService;
   this.productService.getProducts().subscribe((products) => {
     this.productList = products;
   });

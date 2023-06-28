@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { Product } from '../product';
 import { ProductService as ProductService } from '../product.service';
+import { inject } from 'inversify';
  
 @Component({
  selector: 'app-edit-product.component.ts',
@@ -17,7 +18,7 @@ export class EditProductComponent implements OnInit {
  constructor(
    private router: Router,
    private route: ActivatedRoute,
-   private productService: ProductService,
+   @inject (ProductService) private productService: ProductService,
  ) { }
  
  ngOnInit() {
