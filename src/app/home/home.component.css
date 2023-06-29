@@ -1,0 +1,88 @@
+.results {
+    display: grid;
+    column-gap: 14px;
+    row-gap: 14px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin-top: 50px;
+  }
+  
+  input[type="text"] {
+    border: solid 1px var(--primary-color);
+    padding: 10px;
+    border-radius: 8px;
+    margin-right: 4px;
+    display: inline-block;
+    width: 30%;
+  }
+  
+  button {
+    padding: 10px;
+    border: solid 1px var(--primary-color);
+    background: var(--primary-color);
+    color: white;
+    border-radius: 8px;
+  }
+  
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .results {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    input[type="text"] {
+      width: 70%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .results {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+  }
+  /* app.component.css */
+
+:host {
+  --content-padding: 10px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: var(--content-padding);
+  box-shadow: 0px 5px 25px var(--shadow-color);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  margin-right: 10px;
+  color: #000;
+  text-decoration: none;
+}
+
+.content {
+  flex: 1;
+  padding: var(--content-padding);
+}
+
+.footer {
+  text-align: center;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+.brand-name {
+  text-align: center;
+}
+
+.footer {
+  text-align: center;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
