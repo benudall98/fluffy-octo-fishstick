@@ -26,6 +26,8 @@ export class HomeComponent implements OnInit{
   productList: Product[] = [];
   routes = [  
     { path: '/about', label: 'About Us' },
+    { path: '/login', label: 'Login' },
+    { path: '/sign-up', label: 'Sign Up' }
   ];
 
 constructor(private productService: ProductService) { }

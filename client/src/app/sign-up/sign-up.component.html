@@ -1,0 +1,15 @@
+<!-- sign-up.component.html -->
+<div class="row">
+    <div class="col">
+      <form (ngSubmit)="onSubmit()" [formGroup]="signupForm">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input class="form-control" formControlName="username" placeholder="Enter username" type="text">
+          <label for="password">Password</label>
+          <input class="form-control" formControlName="password" placeholder="Enter password" type="text">
+        </div>
+        <button [disabled]="!signupForm.valid" class="btn btn-success" type="submit">Sign Up</button>
+      </form>
+    </div>
+  </div>
+  
